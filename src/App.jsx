@@ -22,29 +22,6 @@ function App() {
     });
   }, []);
 
-  // useEffect(() => {
-  //   firebase.firestore().collection('teams').orderBy('lead.collage.name').get().then((snapshot) => {
-  //     const collageCountsMap = new Map();
-  //     snapshot.forEach((doc) => {
-  //       const data = doc.data();
-  //       const collageName = data?.lead?.collage?.name || 'Unknown';
-  //       if (collageCountsMap.has(collageName)) {
-  //         const currentCount = collageCountsMap.get(collageName);
-  //         collageCountsMap.set(collageName, currentCount + 1);
-  //       } else {
-  //         collageCountsMap.set(collageName, 1);
-  //       }
-  //     });
-  //     const collageCountsArray = Array.from(collageCountsMap, ([collageName, count]) => ({ collageName, count }));
-  //     collageCountsArray.sort((a, b) => b.count - a.count);
-  //     setCollageCounts(collageCountsArray);
-  //   }).catch((error) => {
-  //     console.error('Error getting documents:', error);
-  //   });
-  // }, []);
-
-
-
   return (
     <div className="container">
       <table>
@@ -61,10 +38,6 @@ function App() {
               <td className='count'><span>{count}</span></td>
             </tr>
           ))}
-          {/* <tr key='collageName'>
-            <td>collageName</td>
-            <td className='count'><span>2</span></td>
-          </tr> */}
         </tbody>
       </table>
     </div>
